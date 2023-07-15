@@ -37,7 +37,7 @@ jobs:
     runs-on: ubuntu-latest
     needs: build
     environment:
-      name: 'production'
+      name: 'Production'
       url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
 
     steps:
@@ -51,6 +51,6 @@ jobs:
         uses: azure/webapps-deploy@v2
         with:
           app-name: 'poolytechtest'
-          slot-name: 'production'
-          publish-profile: ${{ secrets.AzureAppService_PublishProfile_25e2c2ce7e854cc2876430a70e3b24df }}
+          slot-name: 'Production'
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_223B5F213313491799C0D4DC1C5B1F9D }}
           package: .
